@@ -2,9 +2,6 @@ package com;
 
 import java.util.Arrays;
 
-/**
- * Created by Dmitriy on 12.03.2016.
- */
 public class ArrayTest {
     public static void main(String[] args) {
         MyArray<String> myArrayTest = new MyArray<String>();
@@ -66,9 +63,9 @@ public class ArrayTest {
 //
 //        System.out.println(myArray);
 
+        System.out.println(myArray.binarySearch(3, 20, 13));
+
 
     }
-
-
 
 }

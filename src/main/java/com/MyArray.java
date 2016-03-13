@@ -98,16 +98,21 @@ public class MyArray<Type> {
 
     }
 
-    public Type binarySearch(int indexFrom, int indexTo, Type key) {
+    public int binarySearch(int indexFrom, int indexTo, int key) {
         sortArray();
-        assert (mas[0] instanceof Number) : "It's not an array of numbers.";
+        assert (mas[0] instanceof Integer) : "It's not an array of numbers.";
 
         if(indexTo >= indexFrom || indexTo <= mas.length - 1){
+            int avgIndex = (indexTo - indexFrom) / 2 + indexFrom;
+            if (Integer.parseInt(String.valueOf(mas[avgIndex])) > key){
+                return binarySearch(indexFrom, avgIndex, key);
+            } else if (Integer.parseInt(String.valueOf(mas[avgIndex])) < key){
+                return binarySearch(avgIndex, indexTo, key);
+            } else return avgIndex;
 
 
 
-        } else System.out.println("Wrong indexes");
-
+        } else return -1;
     }
 
 
